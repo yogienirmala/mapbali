@@ -31,9 +31,6 @@
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
     <!-- Leaflet-KMZ -->
     <script src="https://unpkg.com/leaflet-kmz@latest/dist/leaflet-kmz.js"></script>
-    <script src="leaflet/leaflet.js"></script> <!-- memanggil leaflet.js di folder leaflet -->
-    <script src="js/jquery-3.1.0.min.js"></script> <!-- memanggil jquery di folder js -->
-    <script src="leaflet/leaflet-providers-master/leaflet-providers.js"></script> <!-- memanggil leaflet-providers.js di folder leaflet provider -->
 </head>
 
 <body>
@@ -45,7 +42,7 @@
 
         var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
             maxZoom: 17,
-            attribution: 'Map data: &copy; <a href="https://yogien.000webhostapp.com/map_bali/bali-kabupaten.kmz">OpenStreetMap</a>)',
+            attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
             opacity: 0.90
         });
         OpenTopoMap.addTo(map);
@@ -58,11 +55,12 @@
             }
         });
         // Add remote KMZ files as layers (NB if they are 3rd-party servers, they MUST have CORS enabled)
-        kmzParser.load('https://yogien.000webhostapp.com/map_bali/bali-kabupaten.kmz');
+        kmzParser.load('Bali_Indonesia.kmz');
+        // kmzParser.load('https://raruto.github.io/leaflet-kmz/examples/globe.kmz');
+
         var control = L.control.layers(null, null, {
             collapsed: false
         }).addTo(map);
-        
     </script>
 </body>
 
